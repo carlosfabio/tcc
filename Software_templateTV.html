@@ -1,0 +1,14 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%SELECT%%> and <%%ENDSELECT%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the Software_init() hook (in hooks/Software.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="Software-Categoria-<%%VALUE(Id)%%>" class="Software-Categoria"><%%SELECT%%><%%VALUE(Categoria)%%><%%ENDSELECT%%></td>
+		<td id="Software-Nome-<%%VALUE(Id)%%>" class="Software-Nome"><%%SELECT%%><%%VALUE(Nome)%%><%%ENDSELECT%%></td>
+		<td id="Software-Descricao-<%%VALUE(Id)%%>" class="Software-Descricao"><%%SELECT%%><%%VALUE(Descricao)%%><%%ENDSELECT%%></td>
+		<td id="Software-Link-<%%VALUE(Id)%%>" class="Software-Link"><a href="link.php?t=Software&f=Link&i=<%%VALUE(Id)%%>" target="_blank" title="<%%VALUE(Link)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-globe text-info"></i></a></td>
+		<script>$j(function() {
+			var e_Link = '<%%VALUE(Link)%%>'; if(e_Link == '' || e_Link == '&nbsp;') $j(/*<*/ '#Software-Link-<%%VALUE(Id)%%>' /*>*/).html('');
+		});</script>
